@@ -7,7 +7,7 @@ module.exports = convertToLuaStyle;
  */
 function convertToLuaStyle(theArray) {
     if (theArray instanceof Array) {
-        theArray.unshift(undefined);
+        theArray.unshift(null);
         return theArray;
     } else {
         throw new Error('trying to convert non-array into a Lua-style array');
