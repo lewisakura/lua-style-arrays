@@ -1,6 +1,6 @@
 {
   "name": "lua-style-arrays",
-  "version": "0.0.2",
+  "version": "0.0.2-fix",
   "description": "Create Lua-style arrays that start at one.",
   "main": "index.js",
   "scripts": {
