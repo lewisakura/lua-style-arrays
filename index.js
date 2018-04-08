@@ -1,4 +1,4 @@
-module.exports = convertToLuaStyle;
+const LuaArray = require('./structures/LuaArray');
 
 /**
  * Converts an array to a Lua-style array that starts at one
@@ -6,15 +6,13 @@ module.exports = convertToLuaStyle;
  * @returns {Array} The Lua-style array
  */
 function convertToLuaStyle(theArray) {
-    if (theArray instanceof Array) {
-        if (theArray.length > 0) {
-            if (theArray[0] == null) {
-                console.warn('lua-style-arrays : this array may already be lua-style?');
-            }
-        }
-        theArray.unshift(null);
-        return theArray;
+    if (theArray instanceof LuaArray) {
+        throw new Error('The provided array is already a Lua-styled array.');
+    } else if (Array.isArray(theArray)) {
+        return new LuaArray(theArray);
     } else {
-        throw new Error('trying to convert non-array into a Lua-style array');
+        throw new Error('Trying to convert non-array into a Lua-style array.');
     }
 }
+
+module.exports = convertToLuaStyle;
