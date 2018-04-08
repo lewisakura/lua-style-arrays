@@ -10,5 +10,5 @@ var luaStyleArray = convertToLuaStyle(['this is', 'a lua-style array']);
 console.log(luaStyleArray[1]);
 // this is
 console.log(luaStyleArray[0]);
-// null
+// undefined
 ```
