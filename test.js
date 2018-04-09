@@ -7,6 +7,11 @@ function luaStyleArrayError() {
     convertToLuaStyle('this will error');
 }
 
+function luaStyleArrayError2() {
+    let arr = convertToLuaStyle(['test']);
+    convertToLuaStyle(arr);
+}
+
 describe('Lua-style arrays', () => {
     it('should be Lua-style', () => {
         let testArray = convertToLuaStyle(['this', 'is', 'a', 'test']);
@@ -24,5 +29,8 @@ describe('Lua-style arrays', () => {
     });
     it('should error when I pass a non-array to the function', () => {
         assert.throws(luaStyleArrayError, Error, 'Trying to convert non-array into a Lua-style array.');
+    });
+    it('should error when I pass a Lua-style array to the function', () => {
+        assert.throws(luaStyleArrayError2, Error, 'The provided array is already a Lua-styled array.');
     });
 });
