@@ -2,8 +2,14 @@ class LuaArray extends Array {
     // Overwrite MyArray species to the parent Array constructor
     static get [Symbol.species]() { return Array; }
 
-    constructor(array) {
-        array.unshift(undefined);
+    get trueLength() {
+        return this.length - 1;
+    }
+
+    constructor(array, _doNotUnshift = false) {
+        if (!_doNotUnshift) {
+            array.unshift(undefined);
+        } 
         super(...array);
     }
 
@@ -13,6 +19,18 @@ class LuaArray extends Array {
 
     shift(element) {
         return this.splice(1, 1)[0];
+    }
+
+    toString() {
+        return this.toString().substring(1);
+    }
+
+    inspect() {
+        if (this[0] == undefined) {
+            return new LuaArray(this.slice(1), true);
+        } else {
+            return this;
+        }
     }
 }
 
