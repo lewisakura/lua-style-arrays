@@ -36,7 +36,7 @@ Bugs are tracked as issues on GitHub. After you've determined the issue, made su
 
 Explain the problem and include additional details to help maintainers reproduce the problem:
 * Use a clear and descriptive title for the issue to identify the problem.
-* Describe the exact steps which reproduce the problem in as many details as possible. When listing steps, don't just say what you did. Explain how you did it. For example, if you connected to your lua-style-arrays instance through a tool like [wscat](https://npmjs.com/package/wscat), what *exactly* did you type to trigger the issue?
+* Describe the exact steps which reproduce the problem in as many details as possible. When listing steps, don't just say what you did. Explain how you did it.
 * Describe the behavior you observed after following the steps and point out the exact issue.
 * Explain which behavior you expected to see instead and why.
 * Include screenshots and animated GIFs which show you following the described steps and demonstrate the problem.
