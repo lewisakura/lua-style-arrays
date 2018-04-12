@@ -22,7 +22,7 @@ class LuaArray extends Array {
     }
 
     toString() {
-        return this.toString().substring(1);
+        return this.slice(1).toString();
     }
 
     inspect() {
